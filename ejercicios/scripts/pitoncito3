@@ -1,0 +1,54 @@
+#!/usr/bin/python3
+#la wea anterior sirve para blahblahblah, linux es inteligente :P
+#este programa le hace ping a tres url o algo asi para saber si hay internet
+#8.8.8.8 es la direccion de google
+
+import subprocess, time, sys
+
+def ping(hosts2):
+	ret=subprocess.call(['ping','-c','1',hosts2],
+		stdout=open('/dev/null','w'),
+		stderr=open('/dev/null','w'))
+	return ret==0
+
+hosts=("10.9.0.")
+
+cad=''
+for i in range(0,254):
+	cad=str(i)
+	hosts2=hosts+cad
+	if(ping(hosts2)==0):
+		print(hosts2)
+	xstatus=1
+
+
+
+
+
+
+'''
+def ping(hosts):
+	ret=subprocess.call(['ping','-c','3','-W','5',hosts],
+		stdout=open('/dev/null','w'),
+		stderr=open('/dev/null','w'))
+	return ret==0
+
+def net_is_up():
+	print "[%s] Checking if network is up..."%time.strftime("%Y-%m-%d %H:%M:%S")
+
+	xstatus=1
+	
+	for h in hosts:
+		if ping(h):
+			print "[%s] Network is up!" %time.strftime("%Y-%m-%d %H:%M:%S")
+			xstatus=0
+			break
+		
+	if xstatus:
+		print "[%s] Network is down!" %time.strftime("%Y-%m-%d %H:%M:%S")
+
+	return xstatus
+quit(net_is_up())'''
+
+
+

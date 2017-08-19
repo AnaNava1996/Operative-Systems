@@ -1,0 +1,84 @@
+Incrementos y decrementos:
+inc -> registro
+dec -> registro
+
+
+Operaciones aritmenticas:
+add
+sub
+mul
+div
+
+
+Nota:
+add eax,ebx => eax +=ebx
+sub eax,ebx => eax -=ebx
+mul    eax=abx*fuente    donde fuente es otro registro
+div    eax=abx/fuente    donde fuente es otro registro
+dx,ax  =eax*fuente       se indica que la multiplicacion se asigne en a parte alta(dx) y en la parte baja(ax)
+dx,ax  =eax/fuente       en la parte alta de ax se almacena el resultado y en la parte baja el residuo
+imul=                    toma en cuenta el signo
+idiv=                    toma en cuenta el signo
+
+
+nasm -f elf64 -o archivoobjeto.o archivoensamblador.asm
+
+
+
+
+
+Comparaciones:    14 de marzo 
+Registro llamado flags
+-En las comparaciones debemos checar las siguientes flags: 
+
+	zf => Zero			Enteros sin signo         
+	cf => carry
+
+	zf => Zero			Enteros con signo
+	sf => Signo
+
+cmp registro1,registro2
+	registro1-registro2
+
+Para los enteros sin signo
+	If(VL==VR)			If(VL>VR)		if(VL<VR)
+		ZF=0				ZF=0			ZF=0
+		CF=0				CF=0			CF=1
+
+Para los enteros con signo
+	If(VL==VR)			If(VL>VR)		if(VL<VR)
+		ZF=1				ZF=0			ZF=0
+							SF=OF			SF!=OF
+							   (overflow)
+
+Para saltos se usa la instruccion Jmp "etiqueta a donde saltara"
+	JZ salta si ZF es 1
+	JNZ salta si ZF es 0
+	JO salta si OF es 1
+	JNO salta si OF es 0
+	JS salta si SF es 1
+	JNS salta si SF es 0 
+	JC salta si CF es 1
+	JNC salta si CF es 0
+	JP salta si PF es 1
+	JNP salta si PF es 0
+
+
+		Con signo							Sin signo
+	
+	JE salta si   VL = VL					JE  VL=VR
+	JNE salta si  VL != VR					JNE VL=VR
+
+	JL,JNGE  salta si   VL < VL				JB,JNAE  VL<VR
+	*JNE,JNG salta si   VL <= VR			JA,JNA   VL<=VR
+
+	JG,JNLE salta si	VL>VR				JA,JNBE  VL>VR
+	JGE,JNL salta si 	VL>=VR				JAE,JNB  VL>=BR
+
+
+
+
+
+
+
+

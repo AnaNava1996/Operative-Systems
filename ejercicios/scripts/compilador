@@ -1,0 +1,5 @@
+#/bin/bash -c
+#script que compila con el nombre que le pases el archivo que le pases
+nasm -f elf64 -o $1.o $2
+ld -o $1 $1.o
+./$1

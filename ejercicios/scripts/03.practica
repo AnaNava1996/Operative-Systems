@@ -1,0 +1,41 @@
+#!/usr/bin/python3
+
+import os, sys
+
+obj = "/proc/"
+
+def lspy(obj):
+    print("\nPID\t\tCMD")
+    for h in os.listdir(obj):
+    	if os.path.isdir(obj+h)==True and h[0].isdigit():
+                with open(obj+h+"/"+"status","r") as f:
+                    o = ""
+                    for i in f:
+                        if i.startswith('Name:'):
+                            o = i[6:]
+                        elif i.startswith('Pid:'):
+                            print(i[4:].strip()+"\t\t"+o, end ='')
+
+    for h in os.listdir(obj):
+        if h == "meminfo":
+            with open(obj+h) as f:
+                a=0
+                for i in f:
+                    if i.startswith("MemTotal:"):
+                        a=int(i[10:].split("kB",1)[0].strip())
+                    if i.startswith("MemFree:"):
+                        a=(a-int(i[10:].split("kB",1)[0].strip()))*100/a
+                print("\nMemoria utilizada:",round(a,2),"%\n")
+
+        if h == "cpuinfo":
+            with open(obj+h) as f:
+                count = 0
+                string = ""
+                for i in f:
+                    if i.startswith("model name"):
+                        string = i[i.find(":")+2:].strip()
+                        count += 1
+                print("\nProcesador: ",string,"\nCores:",count)
+
+lspy(obj)
+quit()

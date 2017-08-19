@@ -1,0 +1,42 @@
+hacer un programa que transmita una imagen, o un video, o un pdf...
+
+buscar api de los sockets
+
+
+
+
+
+Buscar redes ABCDE, hosts,
+mascara de sub red
+C 2^8
+que cognos es un dns
+buscar archivo
+route?
+sudo >:p
+donde se configuran los dns (name server harshibo)
+
+
+
+
+
+DNS
+archivo del DNS en /etc/hosts
+ssh usuario@ip 
+
+
+Hacer un script que levante y ejecute una terminal y compile un programa y que lo ejecute... es bash
+
+
+instalar gedit por si acaso >:C y otras cosas!
+
+leer la vaina esa(pdf ensamblador)
+
+
+
+;implementa un for en ensamblador x=3; x>0; x--
+;se utiliza el comando loop, el cual decrementa de forma automatica  el registro ecx y mientras ecx sea !=0 saltara a una etiqueta
+;ciclo_for:
+;	loog ciclo_for
+
+Todo acerca de los procesos... estados, mapa de memoria de una proceso, en memoria como esta organizado etc... 
+

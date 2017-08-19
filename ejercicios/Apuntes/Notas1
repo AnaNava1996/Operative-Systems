@@ -1,0 +1,39 @@
+ls es para ver que hay :P
+
+
+pwd es para saber donde estoy
+
+mkdir programs creo la carpeta
+
+cd programs es para entrar a programs? :P
+
+touch programa2.c creo un archivo llamado programa el .c significa
+.....
+
+chmod 764 o lo que sea y el archivo que quiero cambiar... para cambiar el permiso de un archivo
+
+man chmod manuaaal :D
+
+./loquesea es para correr loquesea
+
+nano programa1.c es para editar con el editor nano
+
+gcc programa2.c -o creara un archivo objeto a partir de programa2.c
+gcc programa2.c -o programa2.c
+
+ctrl O para guardar >:c
+
+man chown
+chown
+quien es root?
+chgrp
+passwd
+adduser   quiero que el usuario sea util :P pueda hacer cositas
+useradd   solo creo al usuario
+deluser
+cp
+mv
+ps
+who
+
+Como hacer un script en python

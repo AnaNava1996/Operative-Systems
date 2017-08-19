@@ -1,0 +1,18 @@
+section .data
+	msg db "HOLA", 0xA ;puedo usar 10 es lo mismo... 
+
+section .text 
+	global _start:
+
+	_start:
+
+	mov rax,4 ;mov es como una asignacion
+	mov rbx,1
+	mov rcx,msg
+	mov rdx,6
+	int 80h
+
+	mov rax,1
+	mov rbx,0
+	int 80h
+

@@ -1,0 +1,26 @@
+#!/usr/bin/python
+
+import os, sys
+
+if len(sys.argv)!=2:
+    print "\nWarning: Only one argument\n"
+    quit()
+
+if str(sys.argv[1]).endswith("/"):
+    obj = str(sys.argv[1])
+else:
+    obj = str(sys.argv[1])+"/"
+
+def lspy(obj):
+    countfile = 0
+    countdir = 0
+    hidden = 0
+    for h in os.listdir(obj):
+        print(h)
+        if os.path.isfile(obj+h)==True:
+            countfile = countfile+1
+        elif os.path.isdir(obj+h)==True:
+            countdir = countdir+1
+    print "Files: %d \nDirectories: %d" %(countfile,countdir)
+
+quit(lspy(obj))

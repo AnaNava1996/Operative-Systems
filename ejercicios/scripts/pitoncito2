@@ -1,0 +1,33 @@
+#!/usr/bin/python
+#script que muestre todos los archivos incluso los ocultos del directorio /usr/bin
+#-directorios
+#-archivos
+#listdir(path)
+#h.lsfile(lista)
+#
+
+#este programa le hace ping a tres url o algo asi para saber si hay internet
+
+import subprocess, os
+
+
+
+def ping():
+	ret=subprocess.call(['ping','-c','3','-W','5',hosts],
+		stdout=open('/dev/null','w'),
+		stderr=open('/dev/null','w'))
+	return ret==0
+
+	xstatus=1
+	
+	for h in hosts:
+		if ping(h):
+			print 
+			xstatus=0
+			break
+		
+	if xstatus:
+		print 
+
+	return xstatus
+quit()
